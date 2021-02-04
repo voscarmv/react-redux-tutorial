@@ -6,7 +6,7 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   if (action.type === ADD_ARTICLE) {
-    state.articles.push(action.payload);
+    return { ...state, articles: state.articles.concat(action.payload) };
   }
   return state;
 };
