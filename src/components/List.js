@@ -1,20 +1,23 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-const mapStateToProps = state => (
-  { articles: state.articles }
-);
+// const mapStateToProps = state => (
+//   { articles: state.articles }
+// );
 
-const connectedList = ({ articles }) => (
-  <ul>
-    {articles.map(
-      element => (
-        <li key={element.title}>{ element.title }</li>
-      ),
-    )}
-  </ul>
-);
+const List = () => {
+  const articles = useSelector(state => state.articles);
+  return (
+    <ul>
+      {articles.map(
+        element => (
+          <li key={element.title}>{ element.title }</li>
+        ),
+      )}
+    </ul>
+  );
+};
 
-const List = connect(mapStateToProps)(connectedList);
+// const List = connect(mapStateToProps)(connectedList);
 
 export default List;
