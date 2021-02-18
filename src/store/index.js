@@ -2,14 +2,14 @@ import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import forbiddenWordsMiddleware from '../middleware/index';
-import rootReducer from '../reducers/index';
+import combineReducers from '../reducers/index';
 
 const store = createStore(
-  rootReducer,
+  combineReducers,
   composeWithDevTools(
     applyMiddleware(
-      logger,
       forbiddenWordsMiddleware,
+      logger,
     ),
   ),
 );

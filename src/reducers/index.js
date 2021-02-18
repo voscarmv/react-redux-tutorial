@@ -1,14 +1,5 @@
-import ADD_ARTICLE from '../actions/action-types';
+import { combineReducers } from 'redux';
+import articleReducer from './article';
+import userReducer from './user';
 
-const initialState = {
-  articles: [],
-};
-
-const rootReducer = (state = initialState, action) => {
-  if (action.type === ADD_ARTICLE) {
-    return { ...state, articles: state.articles.concat(action.payload) };
-  }
-  return state;
-};
-
-export default rootReducer;
+export default combineReducers(articleReducer, userReducer);
