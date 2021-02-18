@@ -7,7 +7,7 @@ import {
 
 export const addArticle = payload => ({ type: ADD_ARTICLE, payload });
 export const fetchUsersRequest = () => ({ type: FETCH_USERS_REQUEST });
-export const fetchUsersSuccess = () => ({ type: FETCH_USERS_SUCCESS });
-export const fetchUsersError = () => ({ type: FETCH_USERS_ERROR });
+export const fetchUsersSuccess = users => ({ type: FETCH_USERS_SUCCESS, payload: users });
+export const fetchUsersError = error => ({ type: FETCH_USERS_ERROR, payload: error });
 
 export default addArticle;

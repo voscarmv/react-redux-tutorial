@@ -20,13 +20,14 @@ const userReducer = (state = initialState, action) => {
     return {
       ...state,
       loading: false,
+      data: action.payload,
       error: '',
     };
   } if (action.type === FETCH_USERS_ERROR) {
     return {
       ...state,
       loading: false,
-      error: 'Error No...',
+      error: action.payload,
     };
   }
   return state;
