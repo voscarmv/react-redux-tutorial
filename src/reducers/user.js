@@ -12,11 +12,22 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   if (action.type === FETCH_USERS_REQUEST) {
-    //
-  } else if (action.type === FETCH_USERS_SUCCESS) {
-    //
-  } else if (action.type === FETCH_USERS_ERROR) {
-    //
+    return {
+      ...state,
+      loading: true,
+    };
+  } if (action.type === FETCH_USERS_SUCCESS) {
+    return {
+      ...state,
+      loading: false,
+      error: '',
+    };
+  } if (action.type === FETCH_USERS_ERROR) {
+    return {
+      ...state,
+      loading: false,
+      error: 'Error No...',
+    };
   }
   return state;
 };
