@@ -1,4 +1,4 @@
-import ADD_ARTICLE from '../actions/action-types';
+import { ADD_ARTICLE } from '../actions/action-types';
 
 const forbiddenWordsMiddleware = store => next => action => {
   const forbiddenWords = ['spam', 'money'];

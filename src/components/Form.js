@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import addArticle from '../actions/index';
+import { addArticle } from '../actions/index';
 
 // function mapDispatchToProps(dispatch) {
 //   return {

@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   loading: false,
-  data: '',
+  data: [],
   error: '',
 };
 
@@ -18,7 +18,6 @@ const userReducer = (state = initialState, action) => {
     };
   } if (action.type === FETCH_USERS_SUCCESS) {
     return {
-      ...state,
       loading: false,
       data: action.payload,
       error: '',
